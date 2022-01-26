@@ -1,0 +1,38 @@
+{
+
+	"manifest_version": 2,
+	"name": "Free Songsterr Plus 1.0",
+	"version": "0.5",
+	"icons": {
+		"48": "someicon.png"
+	},
+	"description": "Desbloquea todas las funcionalidades de premium",
+	"page_action": {
+		"default_icon": {
+			"16": "someicon.png",
+			"32": "someicon.png"
+		},
+		"default_title": "Free 	Songsterr Plus;)",
+		"show_matches": ["https://www.songsterr.com/*"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://www.songsterr.com/*"],
+			"js": ["inject.js"]
+		}
+	],
+	"background": {
+		"scripts": ["block.js"]
+	},
+	"permissions": [
+		"*://www.songsterr.com/*",
+		"*://AlluAlas.github.io/*",
+		"webRequest",
+		"webRequestBlocking",
+		"activeTab",
+		"tabs",
+		"<all_urls>",
+		"idle"
+	]
+
+}
